@@ -3,26 +3,22 @@ There may be better ways to do that ...
 (I am a noob here, but it works as intended.)
 
 ## Overview
-<<<<<<< HEAD
-Docker approach: Reproducable environment for wordpress development. git 
-=======
-Docker approach: Reproducable environment for wordpress development. 
->>>>>>> origin/main
+
+Reproducable environment for wordpress development. 
+
 - docker-compose.yml: PHP webserver, database server, phpmyadmin, two wordpress instances dev and prd and two dedicatet instances of wp-cli to control dev and prd. Mountpoints to interact with the local machine (Input data, configs etc.)
-- prd and stg instances of Wordpress can be configureds and controled by wp-cli.
+- prd and stg instances of Wordpress can be configured and controled by wp-cli.
   - http://localhost:8080 -> phpmyadmin
   - http://localhost:8081 -> wordpress prd
   - http://localhost:8082 -> wordpress stg
-- ``` docker-compose run --user 33:33 --rm wpcli theme install <some-existing-theme-on-wordpress.org> ``` -> to install an online theme. Check the bash files to see what more is possible.
 
-<<<<<<< HEAD
 ## install (basic)
 
 - Terminal ``` docker compose up -d ``` to just run all containers. No further configurations on the wordpress instances. Call the sites with the links above.
 
 ## install (costumized)
 
-``` container-install.sh ``` to get the above plus a bunch of costumizations based on the files in input-data directory: 
+`container-install.sh` to get the above plus a bunch of costumizations based on the files in input-data directory: 
 - Enhanced file upload size
 - install themes
 - install plugins
@@ -59,12 +55,9 @@ Login to the dev page.
 - save the changes to your theme using Create Block Theme. The Zip should contain the theme
 - eventually, copy it to the input-data directory to make it availible for the next container run or other sites.
 
-=======
-## Install
+## WPCLI Example
 
-- Terminal ``` docker compose up -d ``` to just run all containers. No further configurations on the wordpress instances. Call the sites with the links above.
-- ``` container-install.sh ``` to get the above plus a bunch of costumizations: Enhanced file upload size, install themes and plugins based on input files
->>>>>>> origin/main
+- `docker-compose run --user 33:33 --rm wpcli theme install <some-existing-theme-on-wordpress.org>` -> to install an online theme. Check the bash files to see what more is possible.
 
 ## Uninstall
 
