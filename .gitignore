@@ -1,0 +1,8 @@
+.DS_Store
+logs/**
+prd/**
+stg/**
+*.zip
+git-*
+_*
+package-lock.json
